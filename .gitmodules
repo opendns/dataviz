@@ -1,0 +1,3 @@
+[submodule "raindance"]
+	path = raindance
+	url = git://github.com/ThibaultReuille/raindance.git

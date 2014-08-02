@@ -40,11 +40,17 @@
           <span class="credits right">Powered by <a href="https://www.opendns.com/">OpenDNS</a></span>
         </div>
 
+<!------------------------------------------------>
+<p>
+<img src="gallery/dandelions.png">
+</p>
 <h3>
 <a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Description</h3>
 <p>
-OpenGraphiti is a free an open source 3D data visualization engine for data scientists. It helps you create advanced interactive visuals of your data.
+OpenGraphiti is a free and open source 3D data visualization engine for data scientists to visualize semantic networks and to work with them. It offers an easy-to-use API with several associated libraries to create custom-made datasets. It leverages the power of GPUs to process and explore the data and sits on a homemade 3D engine.
 </p>
+
+<!------------------------------------------------>
 
 <h3>
 <a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Requirements</h3>
@@ -53,26 +59,57 @@ OpenGraphiti is a free an open source 3D data visualization engine for data scie
     <li>Mac OSX or Linux</li>
     <li>Clang++ or g++</li>
     <li>Python 2.7.x</li>
+    <li>Emscripten (Optional)</li>
   </ul>
 </p>
 
+<!------------------------------------------------>
 
 <h3>
 <a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Installation</h3>
 
-<p>Clone the repository</p>
+<p>First, you will need to clone the repository. The OpenDNS data visualization framework references a couple of git submodules. You need to use the --recursive option to make sure they all get downloaded properly.</p>
+
 <pre><code>$ git clone https://github.com/opendns/dataviz.git --recursive
 </code></pre>
 
-<p>Install required libraries (Note : They can also be found in the graphiti/Lib folder)</p>
+<p>Second, you have to install some required libraries if you don't already have them. In case the most recent versions of those libraries aren't compatibe with the current version of OpenGraphiti, we have included the ones used for our developement in the repository. They can be found in the graphiti/Lib folder.</p>
+
 <pre><code>$ pip install networkx
 $ pip install pygeoip
 </code></pre>
 
-<p>Compile</p>
+<p>Now let's compile the OpenGraphiti engine :</p>
+
 <pre><code>$ cd dataviz/graphiti
-$ make clean native
+$ make native
 </code></pre>
+
+<p>You should now see a new binary named <b>graphiti</b> inside the your current folder.
+
+<!------------------------------------------------>
+
+<h3>
+<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Running</h3>
+<p>
+OpenGraphiti comes with a couple of script packages. They are aimed to give our data scientists a couple of examples on how to use the engine and its API. The main <b>demo</b> package implements a variety of scripts that can be used to visualize graph datasets and manipulate them in 3D. The curious users are invited to add custom-made packages with their own specific scripts.
+</p>
+<p>To list the available packages :</p>
+<pre><code>./graphiti</code></pre>
+<p>To run the demo package :</p>
+<pre><code>./graphiti demo [dataset.json]</code></pre>
+
+<!------------------------------------------------>
+
+<h3>
+<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Datasets</h3>
+<p>
+To create your custom datasets, you will need to use the <b>SemanticNet</b> library. We have provided several example scripts and use cases and these can be found in the <b>dataviz/semanticnet/examples</b> folder.
+</p>
+<p>
+More information at <a href="https://github.com/ThibaultReuille/semanticnet" class="user-mention">https://github.com/ThibaultReuille/semanticnet</a>
+
+<!------------------------------------------------>
 
 <h3>
 <a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
@@ -82,10 +119,46 @@ $ make clean native
   <li>Andrew Hay &minus; <a href="https://www.twitter.com/andrewsmhay" class="user-mention">@andrewsmhay</a></li>
 </ul>
 
+<!------------------------------------------------>
+
 <h3>
 <a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<p>
+For any questions, problems, or feature requests in reference to OpenGraphiti, please use the <b>issues</b> link associated with the repository in question. We will address all issues as quickly as possible.
+</p>
+
+<!------------------------------------------------>
+
+<h3>
+<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>License</h3>
+<pre>
+Copyright (c) 2014, OpenDNS, Inc.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice, this
+  list of conditions and the following disclaimer.
+
+* Redistributions in binary form must reproduce the above copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+</pre>
+<p>
+</p>
       </section>
 
     </div>

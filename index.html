@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Dataviz by opendns</title>
+    <title>OpenGraphiti : Data Visualization Framework</title>
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -45,7 +45,7 @@
 <img src="gallery/dandelions.png">
 </p>
 <h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Description</h3>
+<a name="description" class="anchor" href="#description"><span class="octicon octicon-link"></span></a>Description</h3>
 <p>
 OpenGraphiti is a free and open source 3D data visualization engine for data scientists to visualize semantic networks and to work with them. It offers an easy-to-use API with several associated libraries to create custom-made datasets. It leverages the power of GPUs to process and explore the data and sits on a homemade 3D engine.
 </p>
@@ -53,7 +53,7 @@ OpenGraphiti is a free and open source 3D data visualization engine for data sci
 <!------------------------------------------------>
 
 <h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Requirements</h3>
+<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h3>
 <p>
   <ul>
     <li>Mac OSX or Linux</li>
@@ -66,7 +66,7 @@ OpenGraphiti is a free and open source 3D data visualization engine for data sci
 <!------------------------------------------------>
 
 <h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Installation</h3>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h3>
 
 <p>First, you will need to clone the repository. The OpenDNS data visualization framework references a couple of git submodules. You need to use the --recursive option to make sure they all get downloaded properly.</p>  
 
@@ -82,15 +82,37 @@ $ pip install pygeoip
 <p>Now let's compile the OpenGraphiti engine :</p>
 
 <pre><code>$ cd dataviz/graphiti
-$ make native
+$ make
 </code></pre>
 
 <p>You should now see a new binary named <b>graphiti</b> inside the your current folder.
 
+<h3>
+<a name="emscripten" class="anchor" href="#emscripten"><span class="octicon octicon-link"></span></a>Alternative : Emscripten</h3>
+<p>
+Alternatively, you can compile OpenGraphiti with <b>emscripten</b> to generate a Javascript file interpreting the compiled LLVM bytecode. Using this option you can integrate our data visualization engine in a web page.
+</p>
+
+<p>
+First, you will need to install <b>Emscripten</b>. Download the <a href="http://kripken.github.io/emscripten-site/docs/getting_started/downloads.html">emsdk-portable archive</a>, extract it and run :
+</p>
+<pre><code>./emsdk update
+./emsdk install latest
+./emsdk activate latest
+source emsdk_set_env.sh
+</pre></code>
+<p><i>NOTE : This last line will set up your environment variables, you may consider putting it in your ~/.profile (or equivalent).</i></p>
+
+<p>
+You are now ready to compile OpenGraphiti for the web :
+</p>
+<pre><code>$ make web</code></pre>
+<p>You should see a new folder name <b>Web</b>. It contains a couple of files you can use for web integration.</p>
+
 <!------------------------------------------------>
 
 <h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Running</h3>
+<a name="running" class="anchor" href="#running"><span class="octicon octicon-link"></span></a>Running</h3>
 <p>
 OpenGraphiti comes with a couple of script packages. They are aimed to give our data scientists a couple of examples on how to use the engine and its API. The main <b>demo</b> package implements a variety of scripts that can be used to visualize graph datasets and manipulate them in 3D. The curious users are invited to add custom-made packages with their own specific scripts.
 </p>
@@ -102,12 +124,28 @@ OpenGraphiti comes with a couple of script packages. They are aimed to give our 
 <!------------------------------------------------>
 
 <h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Datasets</h3>
+<a name="datasets" class="anchor" href="#datasets"><span class="octicon octicon-link"></span></a>Datasets</h3>
 <p>
 To create your custom datasets, you will need to use the <b>SemanticNet</b> library. We have provided several example scripts and use cases and these can be found in the <b>dataviz/semanticnet/examples</b> folder.
 </p>
 <p>
 More information at <a href="https://github.com/ThibaultReuille/semanticnet" class="user-mention">https://github.com/ThibaultReuille/semanticnet</a>
+
+<!------------------------------------------------>
+
+<h3>
+<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<p>
+For any questions, problems or feature requests you can subscribe to our Google Groups and discuss with the community :
+<ul>
+  <li><a href="https://groups.google.com/forum/#!forum/opengraphiti-general">OpenGraphiti-General</a> : General discussion forum.</li>
+  <li><a href="https://groups.google.com/forum/#!forum/opengraphiti-dev">OpenGraphiti-Dev</a> : Development discussion forum.</li>
+</ul> 
+</p>
+<p>
+You can also go on github and open an <b>issue</b> on the corresponding repository. We will address all issues as quickly as possible.
+</p>
+
 
 <!------------------------------------------------>
 
@@ -122,16 +160,7 @@ More information at <a href="https://github.com/ThibaultReuille/semanticnet" cla
 <!------------------------------------------------>
 
 <h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>
-For any questions, problems, or feature requests in reference to OpenGraphiti, please use the <b>issues</b> link associated with the repository in question. We will address all issues as quickly as possible.
-</p>
-
-<!------------------------------------------------>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>License</h3>
+<a name="licensing" class="anchor" href="#licensing"><span class="octicon octicon-link"></span></a>License</h3>
 <pre>
 Copyright (c) 2014, OpenDNS, Inc.
 All rights reserved.

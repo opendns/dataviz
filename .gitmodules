@@ -4,3 +4,6 @@
 [submodule "graphiti"]
 	path = graphiti
 	url = https://github.com/ThibaultReuille/graphiti.git
+[submodule "semanticnet"]
+	path = semanticnet
+	url = https://github.com/ThibaultReuille/semanticnet.git

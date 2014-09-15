@@ -1,9 +1,6 @@
 [submodule "raindance"]
 	path = raindance
 	url = https://github.com/ThibaultReuille/raindance.git
-[submodule "semanticnet"]
-	path = semanticnet
-	url = https://github.com/ThibaultReuille/semanticnet.git
 [submodule "graphiti"]
 	path = graphiti
 	url = https://github.com/ThibaultReuille/graphiti.git

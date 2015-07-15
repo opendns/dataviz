@@ -59,7 +59,6 @@ OpenGraphiti is a free and open source 3D data visualization engine for data sci
     <li>Mac OSX or Linux</li>
     <li>Clang++ or g++</li>
     <li>Python 2.7.x</li>
-    <li>Emscripten (Optional)</li>
   </ul>
 </p>
 
@@ -87,6 +86,41 @@ $ make
 
 <p>You should now see a new binary named <b>graphiti</b> inside the your current folder.
 
+<!------------------------------------------------>
+
+<h3>
+<a name="emscripten" class="anchor" href="#development"><span class="octicon octicon-link"></span></a>Alternative : Development version</h3>
+<p>
+Alternatively, you can compile the development version of OpenGraphiti to stay up-to-date with the most recent changes.
+</p>
+
+<pre><code>$ mkdir dataviz-dev
+$ cd dataviz-dev
+$ git clone https://github.com/ThibaultReuille/raindance.git
+$ git clone https://github.com/ThibaultReuille/graphiti.git
+$ cd graphiti
+$ cmake .
+$ make
+</pre></code>
+
+<p>
+You should see a new binary named <b>graphiti</b> in the current folder.
+If the compilation fails, it is very likely that you are missing some libraries (cmake will check the dependencies for you).
+Use your favorite package manager to install them. Here is the list:
+</p>
+
+<pre>
+OpenGL
+OpenCL
+GLFW3
+GLEW
+Python Libs
+</pre>
+
+<!------------------------------------------------>
+
+<!--
+
 <h3>
 <a name="emscripten" class="anchor" href="#emscripten"><span class="octicon octicon-link"></span></a>Alternative : Emscripten</h3>
 <p>
@@ -108,6 +142,8 @@ You are now ready to compile OpenGraphiti for the web :
 </p>
 <pre><code>$ make web</code></pre>
 <p>You should see a new folder name <b>Web</b>. It contains a couple of files you can use for web integration.</p>
+
+-->
 
 <!------------------------------------------------>
 
@@ -155,6 +191,8 @@ You can also go on github and open an <b>issue</b> on the corresponding reposito
   <li>Thibault Reuille &minus; <a href="https://www.twitter.com/thibaultreuille" class="user-mention">@ThibaultReuille</a></li>
   <li>Skyler Hawthorne &minus; <a href="https://www.twitter.com/dead10ck" class="user-mention">@dead10ck</a></li>
   <li>Andrew Hay &minus; <a href="https://www.twitter.com/andrewsmhay" class="user-mention">@andrewsmhay</a></li>
+  <li>Seimei Matsusaki</li>
+  <!--<li>Chen Ye &minus; <a href="https://www.twitter.com/andrewsmhay" class="user-mention">@andrewsmhay</a></li>-->
 </ul>
 
 <!------------------------------------------------>
